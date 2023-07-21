@@ -577,7 +577,7 @@ func (c *Client) getWebsocketURL(channel map[string]interface{}) string {
 	baseHost := channel["baseHost"].(string)
 	boxName := channel["boxName"].(string)
 
-	return fmt.Sprintf("wss://%s.tch.%s/up/%s/updates?min_seq=%s&channel=%s&hash=%s", c.wsDomain, baseHost, boxName, minSeq, channelName, hash)
+	return fmt.Sprintf("ws://%s.tch.%s/up/%s/updates?min_seq=%s&channel=%s&hash=%s", c.wsDomain, baseHost, boxName, minSeq, channelName, hash)
 }
 
 func (c *Client) sendQuery(queryName string, variables map[string]interface{}, attempts int) map[string]interface{} {
